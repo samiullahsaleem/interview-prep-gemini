@@ -10,6 +10,7 @@ async function generateInterviewQuestions(topic: string) {
   For programming-related topics, include code examples in markdown code blocks (\`\`\`language\`\`\`), where "language" represents the code's language (e.g., sql, javascript, python, etc.).
   User can give the prompt whatever he wants always generate response in the correct format. Always generate correct format. Rememeber it
   Example:
+
   Question: "Write an SQL query to find the total sales for each product category."
   Answer:
   \`\`\`sql
@@ -49,7 +50,7 @@ export async function POST(req: Request) {
     const { topic } = await req.json();
 
     // Call the function to generate interview questions and answers
-    let text = await generateInterviewQuestions(topic);
+    const text = await generateInterviewQuestions(topic);
 
     // Return the generated text as structured data
     const parsedData = JSON.parse(text);
