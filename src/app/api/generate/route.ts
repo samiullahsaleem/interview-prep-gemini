@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     }
 
     const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
 
     const prompt = `Generate 10 technical interview questions and detailed answers about ${subject}.
 ${includeCode ? 'Include relevant code examples where appropriate.' : ''}
